@@ -17,6 +17,7 @@
 </head>
 
 <body>
+    <!-- Login-Form -->
     <div class="flex justify-center items-center min-h-screen">
         <fieldset class="fieldset items-center rounded-box w-xs shadow-lg p-4">
         <div class="grid place-items-center py-5">
@@ -24,15 +25,18 @@
             <h3 class="font-bold text-2xl pt-5">GitHub Issues Tracker</h3>
             <p class="text-[#64748B]">Sign in to manage your issues</p>
         </div>
-        <label class="font-medium">Username</label>
-        <input type="email" class="input" placeholder="Enter Username" />
+        <label class="label font-medium">Username</label>
+        <input id="userInput" maxlength="5" minlength="5" type="username" class="input" placeholder="Enter Username" />
 
-        <label class="font-medium">Password</label>
-        <input type="password" class="input" placeholder="Enter Password" />
+        <label class="label font-medium">Password</label>
+        <input id="userPin" maxlength="8" minlength="8" type="password" class="input" placeholder="Enter Password" />
 
-        <button class="btn btn-primary mt-4">Sign In</button>
+        <button id="loginBtn" class="btn btn-primary mt-4">Sign In</button>
     </fieldset>
     </div>
+
+    <!-- Add JS file -->
+     <script src="login.js"></script>
 </body>
 
 </html>
