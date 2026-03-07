@@ -13,7 +13,7 @@ document.getElementById('loginBtn')
         if(usernameInput == 'admin' && userInputPin == 'admin123') {
             alert('Login Success');
             // replace home page
-            window.location.assign('/home.html');
+            window.location.assign('home.html');
         } else {
             alert('Login Failed');
             return;
