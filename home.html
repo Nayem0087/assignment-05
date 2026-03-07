@@ -23,12 +23,12 @@
 <body>
     <!-- header section -->
     <header class="py-5 px-4 shadow-md rounded-md">
-        <div class="max-w-[95%] mx-auto flex justify-between">
-            <div class="flex justify-center gap-2">
+        <div class="max-w-[95%] mx-auto md:flex justify-between">
+            <div class="flex justify-center gap-2 pb-5">
                 <img class="h-[36px] w-auto" src="assets/github-logo.png" alt="">
                 <h3 class="font-semibold text-2xl">GitHub Issues Tracker</h3>
             </div>
-            <div class="join gap-4">
+            <div class="join gap-4 flex justify-center">
                 <div>
                     <label class="input validator join-item">
                         <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
@@ -43,7 +43,7 @@
                     </label>
                     <div class="validator-hint hidden">This issue is not here.</div>
                 </div>
-                <button class="btn btn-primary join-item rounded-md"><i class="fa-solid fa-plus"></i>New Issue</button>
+                <button class="btn btn-primary join-item rounded-md">Search</button>
             </div>
         </div>
 
@@ -52,23 +52,23 @@
     <main class="">
         <section class="max-w-[85%] mx-auto">
             <!-- btn toggling -->
-            <div class=" flex gap-5 py-10">
+            <div class="flex gap-5 py-10">
                 <button class="btn btn-primary join-item px-10">All</button>
                 <button class="btn btn-outline join-item px-8">Open</button>
                 <button class="btn btn-outline join-item px-6">Closed</button>
             </div>
             <!-- issues counter -->
-            <div class="flex justify-between shadow-[0_0_10px_rgba(0,0,0,0.2)] px-4 py-6 rounded-sm">
+            <div class="flex justify-between shadow-[0_0_10px_rgba(0,0,0,0.2)] md:px-4 px-2 py-6 rounded-sm">
                 <div class="flex items-center gap-2">
                     <div>
-                        <img src="assets/Aperture.png" alt="Aperture image">
+                        <img class="bg-[#ECE4FF] rounded-full px-2 py-2" src="assets/Aperture.png" alt="Aperture image">
                     </div>
                     <div>
                         <h2 class="font-semibold text-[20px]">50 Issues</h2>
                         <p class="text-[#64748B]">Track and manage your project issues</p>
                     </div>
                 </div>
-                <div class="flex gap-5">
+                <div class="md:flex gap-5">
                     <div class="flex items-center gap-2">
                         <p class="bg-[#00A96E] rounded-full px-1 py-1"></p>
                         <p class="font-medium">Open</p>
@@ -77,6 +77,23 @@
                         <p class="bg-[#A855F7] rounded-full px-1 py-1"></p>
                         <p class="font-medium">Closed</p>
                     </div>
+                </div>
+            </div>
+            <!-- card section -->
+            <div class="grid lg:grid-cols-4 md:grid-cols-3 gap-4">
+                <div class="border px-4 py-4">
+                    <div class="flex justify-between">
+                        <img src="assets/Open-Status.png" alt="open-status">
+                        <h5 class="font-medium text-[12px] bg-[#FEECEC] text-[#EF4444] px-6 py-1 rounded-lg">High</h5>
+                    </div>
+                    <h3>Fix navigation menu on mobile devices</h3>
+                    <p>The navigation menu doesn't collapse properly on mobile devices...</p>
+                    <div>
+                        <h5 class="font-medium text-[12px] bg-[#FEECEC] text-[#EF4444] px-6 py-1 rounded-lg">Blog</h5>
+                        <h5 class="font-medium text-[12px] bg-[#FEECEC] text-[#EF4444] px-6 py-1 rounded-lg">Help Wanted
+                        </h5>
+                    </div>
+                    <p>#1by john_doe <br> 1/15/2024</p>
                 </div>
             </div>
         </section>
