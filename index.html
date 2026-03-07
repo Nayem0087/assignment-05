@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Github Issue Tracker</title>
+    <!-- Add daisyUI & TailwindCSS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <!-- Add Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+    <!-- Add CSS file  -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="flex justify-center items-center min-h-screen">
+        <fieldset class="fieldset items-center rounded-box w-xs shadow-lg p-4">
+        <div class="grid place-items-center py-5">
+            <img src="assets/github-logo.png" alt="">
+            <h3 class="font-bold text-2xl pt-5">GitHub Issues Tracker</h3>
+            <p class="text-[#64748B]">Sign in to manage your issues</p>
+        </div>
+        <label class="font-medium">Username</label>
+        <input type="email" class="input" placeholder="Enter Username" />
+
+        <label class="font-medium">Password</label>
+        <input type="password" class="input" placeholder="Enter Password" />
+
+        <button class="btn btn-primary mt-4">Sign In</button>
+    </fieldset>
+    </div>
+</body>
+
+</html>
