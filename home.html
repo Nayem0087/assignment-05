@@ -50,12 +50,12 @@
     </header>
     <!-- main section -->
     <main class="">
-        <section class="max-w-[85%] mx-auto">
+        <section class="max-w-[90%] mx-auto">
             <!-- btn toggling -->
             <div class="flex gap-5 py-10">
-                <button class="btn   btn-primary join-item px-10">All</button>
-                <button class="btn px-8">Open</button>
-                <button class="btn px-8">Closed</button>
+                <button id="allBtn" class="btn   btn-primary join-item px-10">All</button>
+                <button id="openBtn" class="btn px-8">Open</button>
+                <button id="closedBtn" class="btn px-8">Closed</button>
             </div>
             <!-- issues counter -->
             <div class="flex justify-between shadow-[0_0_10px_rgba(0,0,0,0.2)] md:px-4 px-2 py-6 rounded-sm">
@@ -64,7 +64,7 @@
                         <img class="bg-[#ECE4FF] rounded-full px-2 py-2" src="assets/Aperture.png" alt="Aperture image">
                     </div>
                     <div>
-                        <h2 class="font-semibold text-[20px]">50 Issues</h2>
+                        <h2 id="issuesCount" class="font-semibold text-[20px]">50 Issues</h2>
                         <p class="text-[#64748B]">Track and manage your project issues</p>
                     </div>
                 </div>
@@ -80,7 +80,7 @@
                 </div>
             </div>
             <!-- card section -->
-            <div id="issuesContainer" class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3 py-6 shadow-[0_0_10px_rgba(0,0,0,0.2)] rounded-lg px-5 mb-10">
+            <div id="card-container" class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3 py-6 shadow-[0_0_10px_rgba(0,0,0,0.2)] rounded-lg px-5 mb-10">
                 <!-- dynamic card loading here -->
 
             </div>
@@ -91,6 +91,36 @@
                 </div>
         </section>
     </main>
+
+    <!-- card.innerHTML = `
+            <div class="px-4 py-4">
+                        <div class="flex justify-between py-4">
+                            <img src="assets/${image}" alt="${issue.status}">
+                            <h5 class="font-medium text-[12px] bg-[#FEECEC] text-[#EF4444] px-6 py-1 rounded-full">${issue.priority.toUpperCase()}
+                            </h5>
+                        </div>
+                        <h3 class="font-semibold text-[14px]pb-2">${issue.title}</h3>
+                        <p class="text-[#64748B] text-[12px] line-clamp-2">${issue.description}</p>
+                        <div class="flex gap-2 py-4">
+                            ${issue.labels?.[0] ? `
+                            <a class="flex justify-center items-center gap-1 font-medium text-[10px] bg-[#FEECEC] text-[#EF4444] px-2 py-1 rounded-full" href="">
+                            <img class="scale-90" src="assets/Vector.png" alt="vector">
+                            <span>${issue.labels[0].toUpperCase()}</span>
+                            </a> ` : ""}
+
+                            ${issue.labels?.[1] ? `
+                            <a class="flex justify-center items-center gap-1 font-medium text-[10px] bg-[#FFF8DB] text-[#D97706] px-2 py-1 rounded-full static" href="">
+                            <img class="scale-90" src="assets/Lifebuoy.png" alt="vector">
+                            <span>${issue.labels[1].toUpperCase()}</span>
+                            </a> ` : ""}
+                            </div>
+                    </div>
+                    <div class="border-t-2 border-[#E4E4E7]">
+                        <p class="text-[#64748B] text-[12px] px-4 py-3">${issue.author} <br>
+                        <span class="block mt-2">${new Date(issue.createdAt).toLocaleDateString()}</span></p>
+                    </div>
+        `; -->
+
     <!-- JS File -->
      <script src="script.js"></script>
 </body>
