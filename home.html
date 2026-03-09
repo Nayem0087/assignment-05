@@ -58,8 +58,8 @@
                 <button id="closedBtn" class="btn px-8">Closed</button>
             </div>
             <!-- issues counter -->
-            <div class="flex justify-between shadow-[0_0_10px_rgba(0,0,0,0.2)] md:px-4 px-2 py-6 rounded-sm">
-                <div class="flex items-center gap-2">
+            <div class="sm:flex justify-between shadow-[0_0_10px_rgba(0,0,0,0.2)] md:px-4 px-2 py-6 rounded-sm">
+                <div class="flex items-center justify-center sm:gap-2 gap-4">
                     <div>
                         <img class="bg-[#ECE4FF] rounded-full px-2 py-2" src="assets/Aperture.png" alt="Aperture image">
                     </div>
@@ -68,7 +68,7 @@
                         <p class="text-[#64748B]">Track and manage your project issues</p>
                     </div>
                 </div>
-                <div class="md:flex gap-5">
+                <div class="flex justify-between px-5 py-3 gap-5">
                     <div class="flex items-center gap-2">
                         <p class="bg-[#00A96E] rounded-full px-1 py-1"></p>
                         <p class="font-medium">Open</p>
@@ -80,49 +80,60 @@
                 </div>
             </div>
             <!-- card section -->
-            <div id="card-container" class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3 py-6 shadow-[0_0_10px_rgba(0,0,0,0.2)] rounded-lg px-5 mb-10">
+            <div id="card-container"
+                class="grid lg:grid-cols-4 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-3 py-6 shadow-[0_0_10px_rgba(0,0,0,0.2)] rounded-lg px-5 mb-10">
                 <!-- dynamic card loading here -->
 
             </div>
 
             <!-- loading spinner -->
-                <div id="loadingSpinner" class="h-[60vh] flex hidden justify-center items-center">
-                     <span class="loading loading-spinner loading-xl"></span>
+            <div id="loadingSpinner" class="h-[60vh] flex hidden justify-center items-center">
+                <span class="loading loading-spinner loading-xl"></span>
+            </div>
+
+            <!-- Modal -->
+            <button class="btn">open modal</button>
+            <dialog id="issueDetailsModal" class="modal">
+                <div class="modal-box">
+                    <h3 class="text-lg font-bold mb-2">Fix broken image uploads</h3>
+                    <div class="flex gap-5">
+                        <p class="bg-[#00A96E] px-3 py-1 rounded-full text-white">Opened</p>
+                        <p class="text-gray-500">Opened by Fahim Ahmed 22/02/2026</p>
+                    </div>
+                    <div class="flex gap-2 pt-4">
+                    <a class="flex justify-center items-center gap-1 font-medium text-[10px] bg-[#FEECEC] text-[#EF4444] px-2 py-1 rounded-full">
+                        <img class="scale-90" src="assets/Vector.png">
+                        <span>BUG</span>
+                    </a>
+                    <a class="flex justify-center items-center gap-1 font-medium text-[10px] bg-[#FFF8DB] text-[#D97706] px-2 py-1 rounded-full">
+                        <img class="scale-90" src="assets/Lifebuoy.png">
+                        <span>HELP WANTED</span>
+                    </a>
                 </div>
+                    <p class="text-gray-500 py-2">The navigation menu doesn't collapse properly on mobile devices. Need to fix the responsive behavior.</p>
+                    <div class="flex justify-between px-15">
+                        <div>
+                            <p class="text-gray-500">Assignee:</p>
+                            <h3 class=" font-bold">Fahim Ahmed</h3>
+                        </div>
+                        <div>
+                            <p class="text-gray-500 pb-1">Priority:</p>
+                            <p class="bg-red-500 px-3  text-white rounded-full">HIGH</p>
+                        </div>
+                    </div>
+                    <div class="modal-action">
+                        <form method="dialog">
+                            <button class="btn btn-primary">Close</button>
+                        </form>
+                    </div>
+                </div>
+            </dialog>
+
         </section>
     </main>
 
-    <!-- card.innerHTML = `
-            <div class="px-4 py-4">
-                        <div class="flex justify-between py-4">
-                            <img src="assets/${image}" alt="${issue.status}">
-                            <h5 class="font-medium text-[12px] bg-[#FEECEC] text-[#EF4444] px-6 py-1 rounded-full">${issue.priority.toUpperCase()}
-                            </h5>
-                        </div>
-                        <h3 class="font-semibold text-[14px]pb-2">${issue.title}</h3>
-                        <p class="text-[#64748B] text-[12px] line-clamp-2">${issue.description}</p>
-                        <div class="flex gap-2 py-4">
-                            ${issue.labels?.[0] ? `
-                            <a class="flex justify-center items-center gap-1 font-medium text-[10px] bg-[#FEECEC] text-[#EF4444] px-2 py-1 rounded-full" href="">
-                            <img class="scale-90" src="assets/Vector.png" alt="vector">
-                            <span>${issue.labels[0].toUpperCase()}</span>
-                            </a> ` : ""}
-
-                            ${issue.labels?.[1] ? `
-                            <a class="flex justify-center items-center gap-1 font-medium text-[10px] bg-[#FFF8DB] text-[#D97706] px-2 py-1 rounded-full static" href="">
-                            <img class="scale-90" src="assets/Lifebuoy.png" alt="vector">
-                            <span>${issue.labels[1].toUpperCase()}</span>
-                            </a> ` : ""}
-                            </div>
-                    </div>
-                    <div class="border-t-2 border-[#E4E4E7]">
-                        <p class="text-[#64748B] text-[12px] px-4 py-3">${issue.author} <br>
-                        <span class="block mt-2">${new Date(issue.createdAt).toLocaleDateString()}</span></p>
-                    </div>
-        `; -->
-
     <!-- JS File -->
-     <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 
 </html>

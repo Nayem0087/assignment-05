@@ -42,6 +42,7 @@ const loadIssues = async () => {
 
 loadIssues();
 
+// display issue card
 const displayIssues = (issues) => {
 
     const container = document.getElementById("card-container");
@@ -59,13 +60,13 @@ const displayIssues = (issues) => {
         card.innerHTML = `
             <div class="px-4 py-4">
                 <div class="flex justify-between py-4">
-                    <img src="assets/${image}" alt="${issue.status}">
+                    <img src="assets/${image}" alt="${issue.id}">
                     <h5 class="font-medium text-[12px] bg-[#FEECEC] text-[#EF4444] px-6 py-1 rounded-full">
                         ${issue.priority.toUpperCase()}
                     </h5>
                 </div>
 
-                <h3 class="font-semibold text-[14px] pb-2">${issue.title}</h3>
+                <h3 onclick='openIssuesModal(${issues.status})' class="font-semibold text-[14px] pb-2">${issue.title}</h3>
 
                 <p class="text-[#64748B] text-[12px] line-clamp-2">
                     ${issue.description}
@@ -104,6 +105,7 @@ const displayIssues = (issues) => {
 
 };
 
+// issues count
 const updateCount = (issues) => {
     
     const count = document.getElementById("issuesCount");
@@ -167,4 +169,20 @@ document.getElementById("searchBtn")
     hideLoading();
 
 });
+
+// modal
+const issueDetailsModal = document.getElementById('issueDetailsModal');
+
+async function openIssuesModal(issueId) {
+    // console.log(issueId);
+    const res = await fetch(`https://phi-lab-server.vercel.app/api/v1/lab/issue/${issueId}`);
+    const data = await res.json();
+    console.log(data);
+    issueDetailsModal.showModal();
+} 
+
+// openIssuesModal();
+
+
+
 
