@@ -72,7 +72,7 @@ const displayIssues = (issues) => {
                     ${issue.description}
                 </p>
 
-                <div class="flex gap-2 py-4">
+                <div class="flex flex-wrap  gap-2 py-4">
 
                     ${issue.labels?.[0] ? `
                     <a class="flex justify-center items-center gap-1 font-medium text-[10px] bg-[#FEECEC] text-[#EF4444] px-2 py-1 rounded-full">
@@ -170,7 +170,7 @@ document.getElementById("searchBtn")
 
 });
 
-// modal
+// // modal
 const issueDetailsModal = document.getElementById('issueDetailsModal');
 
 async function openIssuesModal(issueId) {
@@ -181,7 +181,7 @@ async function openIssuesModal(issueId) {
     issueDetailsModal.showModal();
 } 
 
-// openIssuesModal();
+
 
 
 

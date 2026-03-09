@@ -1,4 +1,4 @@
-1. What is the difference between var, let, and const?
+1. What is the difference between var, let, and const? 
 ans:- 
 var: Can be re-declared and updated. It is function-scoped.
 let: Cannot be re-declared but can be updated. It is block-scoped.
